@@ -9,22 +9,25 @@ public class centauri {
     // BufferedReader 사용 시 예외처리 필수!
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        int n = Integer.parseInt(br.readLine());
+        int answer = 0;
 
-
-        int n = Integer.parseInt(st.nextToken());
-
-
-        int cnt = 2;
         for (int i = 0; i < n; i++) {
-            String[] str = br.readLine().split(" ");
-            int start = Integer.parseInt(str[0]); // 시작점
-            int end = Integer.parseInt(str[1]); // 끝점
-            cnt++;
+            StringTokenizer st = new StringTokenizer(br.readLine()," ");
 
-
+            int X = Integer.parseInt(st.nextToken());
+            int Y = Integer.parseInt(st.nextToken());
+            int D = Y-X;
+            int mid = (int)Math.sqrt(D);
+            if (mid==Math.sqrt(D)){
+                answer = mid*2-1;
+            }
+            else if(D<=mid*mid+mid){
+                answer = mid*2;
+            }
+            else answer = mid*2+1;
+            System.out.println(answer);
         }
-
     }
 }
 
