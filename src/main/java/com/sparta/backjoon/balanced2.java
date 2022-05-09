@@ -26,10 +26,13 @@ public class balanced2 {
                 if (ch == '[') cnt2++;
                 if (ch == ')') cnt1--;
                 if (ch == ']') cnt2--;
-
+                else if(cnt1<0 || cnt2<0){
+                    System.out.println("no");
+                    break;
+                }
 
             }
-            if (cnt1 < 0 || cnt2 < 0) System.out.println("no");
+//            if (cnt1 < 0 || cnt2 < 0) System.out.println("no");
             if (cnt1 == 0 && cnt2 == 0) System.out.println("yes");
 
         }
