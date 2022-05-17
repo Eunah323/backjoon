@@ -22,6 +22,8 @@ public class 최대공약최소공배 {
         }
         int max = list[0]*list[1]/min;
 
+
+
         System.out.println(min);
         System.out.println(max);
 
